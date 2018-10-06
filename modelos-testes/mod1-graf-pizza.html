@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico de Pizza - Modelo 01</title>
+
+    <!--<script src="style/jquery/dist/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<body>
+<h1>
+    Gráfico de Pizza - Modelo 10
+</h1>
+
+<canvas style="max-width: 850px; max-height: 850px" id="bar-chart-grouped"></canvas>
+
+
+<script>
+    // EXEMPLO JSON 2 -> IGUAL O DE CIMA PORÉM MAIS CURTO
+    var data2 = {
+        labels: ["0-30 dias", "30-60 dias", "60-90 dias"],
+        pragas: [
+            {label: "Anticarsia gemmatalis", backgroundColor: "#1048A9", data: [5,20,10]},
+            {label: "Chrysodexis includens", backgroundColor: "#A6120A", data: [50,30,40]},
+            {label: "Spodoptera spp", backgroundColor: "#00B74A", data: [10,40,67]},
+            {label: "Grupo Heliothinae", backgroundColor: "#FFCB1E", data: [20,50,20]}
+        ]
+    }
+
+    //console.log(data);
+    //console.log(data2.pragas[2].label);
+
+    var datasetsAuxiliar = new Array();
+
+
+    for(var i = 0; i < data2.pragas.length ; i++){
+        var praga = new Object();
+        //console.log(data2.pragas[i].label);
+        praga.label = data2.pragas[i].label;
+        praga.backgroundColor = data2.pragas[i].backgroundColor;
+        praga.data = data2.pragas[i].data;
+        datasetsAuxiliar.push(praga);
+    }
+
+    var tempData = {
+        labels: data2.labels,
+        datasets: datasetsAuxiliar
+    };
+
+
+    //console.log(tempData);
+
+    var ctx = document.getElementById("bar-chart-grouped").getContext('2d');
+    var myChart = new Chart(document.getElementById("bar-chart-grouped"), {
+        type: 'bar',
+        data: tempData,
+        options: {
+            title: {
+                display: true,
+                text: 'Título'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+
+                        min: 0,
+                        max: 100,
+                        callback: function(value){return value+ "%"}
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Percentage"
+                    }
+                }]
+            }
+        }
+    });
+</script>
+</body>
+</html>

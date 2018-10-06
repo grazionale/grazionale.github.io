@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Painel de Indicadores EMATER - MIP</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="style/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="style/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="style/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- Chart.Js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <!-- Style.css -->
+  <link rel="stylesheet" href="style/style.css">
+
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+</head>
+
+<body class="hold-transition skin-green-light sidebar-mini">
+  <div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini">
+          <b>M</b>IP</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">
+          <b>Painel</b> MIP</span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+      </nav>
+    </header>
+    <!-- FIM HEADER -->
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Buscar...">
+            <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+        <!-- /.search form -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">Navegação</li>
+
+          <li>
+            <a href="index.html">
+              <i class="fa fa-th"></i>
+              <span>Visão Geral Paraná</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-dashboard"></i>
+              <span>Análise por Região</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <a href="pages/noroeste.html">
+                  <i class="fa fa-bug"></i> Noroeste</a>
+              </li>
+              <li>
+                <a href="pages/norte.html">
+                  <i class="fa fa-bug"></i> Norte</a>
+              </li>
+              <li>
+                <a href="pages/sul.html">
+                  <i class="fa fa-bug"></i> Sul</a>
+              </li>
+              <li>
+                <a href="pages/sudoeste.html">
+                  <i class="fa fa-bug"></i> Sudoeste</a>
+              </li>
+              <li>
+                <a href="pages/oeste.html">
+                  <i class="fa fa-bug"></i> Oeste</a>
+              </li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i>
+              <span>Conceitos</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <a href="pages/estadios.html">
+                  <i class="fa fa-bug"></i> Estágios Vegetativos</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-th"></i>
+              <span>Regiões</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Manejo Integrado de Pragas - Principais Resultados
+          <small>Safra 2019/2020</small>
+        </h1>
+        <!-- <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-dashboard"></i> Home</a>
+          </li>
+          <li class="active">Dashboard</li>
+        </ol> -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- Small boxes (Stat box) -->
+
+        <!-- Fullwidth Row-->
+
+        <div class="row">
+          <section class="col-lg-12">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <!-- <h3 class="box-title">Números Estatísticos</h3> -->
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" data-widget="remove">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-12">
+                    <!-- Sobre o mip -->
+                    <div class="bg-green-gradient">
+                      <div class="box-body border-radius-none">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum. In tempor, quam nec ultricies
+                          elementum. In tempor, quam nec ultricies elementum
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-12">
+                    <div class="info-box bg-red">
+                      <span class="info-box-icon">
+                        <i class="fa fa-fw fa-bar-chart"></i>
+                      </span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">Nº Análises</span>
+                        <span>Realizadas</span>
+                        <span class="info-box-number" id="num_analises"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-12">
+                    <div class="info-box bg-blue">
+                      <span class="info-box-icon">
+                        <i class="fa fa-fw fa-road"></i>
+                      </span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">Nº de Unidades</span>
+                        <span class="info-box-text">De Referência</span>
+                        <span class="info-box-number" id="num_un_ref"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-12">
+                    <div class="info-box bg-green">
+                      <span class="info-box-icon">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                      </span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">Total de Área</span>
+                        <span class="info-box-text">Cultivada</span>
+                        <span class="info-box-number" id="total_area_cultivada"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-12">
+                    <div class="info-box bg-yellow">
+                      <span class="info-box-icon">
+                        <i class="fa fa-bug"></i>
+                      </span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">Lagartas</span>
+                        <span class="info-box-number">41,410</span>
+                        <span>Algum texto</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col-lg-12">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <h3 class="box-title">Filtros</h3>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" data-widget="remove">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-lg-12 col-sm-12">
+                    <div class="filtros">
+                      <div class="box-body border-radius-none">
+                        <div class="col-lg-3">
+                          <div class="row ano-safra">
+                            <div class="col-xs-3 ">
+                              <label>Selecionar ano da Safra</label>
+                            </div>
+                            <div class="col-xs-9 ">
+                              <select id="ano-da-safra" class="form-control">
+                                <option value="2017/2018">2017/2018</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="line-space"></div>
+
+                          <div class="row regiao-ur">
+                            <div class="col-xs-3 ">
+                              <label>Região</label>
+                            </div>
+                            <div class="col-xs-9 ">
+                              <input type="checkbox" name="todas" value="Todas" id="regiao-todas-safra" checked onclick="checarTodasRegioes()">Todas
+                              <input type="checkbox" name="norte" value="Norte" id="regiao-norte-safra" checked>Norte
+                              <input type="checkbox" name="noroeste" value="Noroeste" id="regiao-noroeste-safra"
+                                checked>Noroeste
+                              <input type="checkbox" name="sul" value="Sul" id="regiao-sul-safra" checked>Sul
+                              <input type="checkbox" name="sudoeste" value="Sudoeste" id="regiao-sudoeste-safra"
+                                checked>Sudoeste
+                              <input type="checkbox" name="oeste" value="Oeste" id="regiao-oeste-safra" checked>Oeste
+                            </div>
+                          </div>
+
+                          <div class="line-space"></div>
+
+                          <div class="row municipio-ur">
+                            <div class="col-xs-3 ">
+                              <label>Município</label>
+                            </div>
+
+                            <div class="col-xs-9 ">
+                              <select id="municiopio-regiao" class="form-control">
+                                <option value="Todos">Todos</option>
+                                <option value="CORNÉLIO PROCÓPIO">CORNÉLIO PROCÓPIO</option>
+                                <option value="MARIÓPOLIS PR">MARIÓPOLIS PR</option>
+                              </select>
+                            </div>
+
+
+                          </div>
+
+                          <div class="line-space"></div>
+
+                          <div class="row produtor-ur">
+                            <div class="col-xs-3 "><label>Produtor</label></div>
+                            <div class="col-xs-9 "><input type="text" id="produtor-safra" class="form-control"
+                                placeholder="Produtor"></div>
+
+                          </div>
+
+                          <div class="line-space"></div>
+                          <div class="line-space"></div>  
+
+                          <div class="row data-amostra">
+                              <div class="col-xs-3 ">
+                                <label for="data-amostra">Período da Amostra</label>
+                              </div>
+                              <div class="col-xs-6 ">
+                                <input id="data-inicial-amostra" type="date" value="" class="form-control">
+                                <input id="data-final-amostra" type="date" value="" class="form-control">
+                              </div>
+  
+                            </div>
+                            <div class="line-space"></div>
+                            <div class="line-space"></div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="row tecnico-ur">
+                            <div class="col-xs-3">
+                              <label>Responsável Técnico</label>
+                            </div>
+                            <div class="col-xs-9">
+                              <select id="tecnico-safra" class="form-control">
+                                <option value="Todos">Todos</option>
+                                <option value="Técnico De Agronomia">Técnico De Agronomia</option>
+                                <option value="IVANDERSON BORELLI">IVANDERSON BORELLI</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="line-space"></div>
+
+                          <div class="id-ur row">
+                            <div class="col-xs-3">
+                              <label>Identificação da UR</label>
+                            </div>
+                            <div class="col-xs-9">
+                              <input type="text" id="id-ur" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="cultivar row">
+                            <div class="col-xs-3">
+                              <label>Cultivar</label>
+                            </div>
+                            <div class="col-xs-9">
+                              <select id="cultivar-safra" class="form-control">
+                                <option value="Todos">Todos</option>
+                                <option value="TMG -  7262">TMG - 7262</option>
+                                <option value="BMX RAIO Ipro">BMX RAIO Ipro</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="line-space"></div>
+                          <div class="line-space"></div>
+
+                          <div class="tipo-de-soja row">
+                            <div class="col-xs-3">
+                              <label>Soja Bt?</label>
+                            </div>
+                            <div class="col-xs-9">
+                              <div>
+                                <input type="radio" name="tipo-soja" value="tipo-soja-ambos" checked />
+                                <label for="tipo-soja-ambos">Ambos</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="tipo-soja" value="tipo-soja-sim" />
+                                <label for="tipo-soja-sim">Sim</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="tipo-soja" value="tipo-soja-nao" />
+                                <label for="tipo-soja-nao">Não</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="line-space"></div>
+                          <div class="line-space"></div>
+
+                          <div class="ferrugem-soja row" id="ferrugem-safra">
+                            <div class="col-xs-3">
+                              <label>Resitênte a Ferrugem?</label>
+                            </div>
+                            <div class="col-xs-9">
+                              <div>
+                                <input type="radio" name="ferrugem" value="ferrugem-ambos" checked />
+                                <label for="ferrugem-ambos">Ambos</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="ferrugem" value="ferrugem-sim" />
+                                <label for="ferrugem-sim">Sim</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="ferrugem" value="ferrugem-nao" />
+                                <label for="ferrugem-nao">Não</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="col-lg-3">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="filtros">
+                      <div class="box-body border-radius-none">
+                        <div class="col-lg-3">
+                          <div class="row data-amostra">
+                            <div class="col-xs-12 ">
+                              <button id="button-limpar-data" class="btn btn-success"><i class="fa fa-calendar-times-o"></i>
+                                Limpar</button>
+                              <button id="filtrar-buscar" onclick="filtrar()" class="btn btn-success"><i class="fa fa-search"></i>
+                                Filtrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col-lg-12">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" data-widget="remove">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="canvas-graph-generator">
+                      <div class="box-body border-radius-none">
+                        <h3>Gráfico de Barras</h3>
+                        <canvas id="canvas-generator-graph-bar" width="800" height="450"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="canvas-graph-generator">
+                      <div class="box-body border-radius-none">
+                        <h3>Gráfico de Pizza</h3>
+                        <canvas id="canvas-generator-graph-pizza" width="800" height="450"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <section class="col-lg-12">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" data-widget="remove">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-lg-6 col-sm-6">
+
+                  </div>
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="box-body border-radius-none">
+                      <h3>Tabela</h3>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-7 connectedSortable">
+            <h3>O cenário de lagartas e percevejos em soja no Paranásafra 2016/17</h3>
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="#tab-lagartas" data-toggle="tab">Lagartas</a>
+                </li>
+                <li>
+                  <a href="#tab-percevejos" data-toggle="tab">Percevejos</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab-lagartas">
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Ocorrência percentual média por grupo de lagartas em três períodos do ciclo
+                        da soja, em Unidades de
+                        Referência (URs) de MIP no Paraná, na safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="bar-chart-grouped" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Distribuição percentual da participação das espécies no complexo de
+                        lagartas pragas da soja nas URs
+                        de MIP no Paraná, safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="pie-chart" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-percevejos">
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Distribuição percentual das espécies no complexo de percevejos durante o
+                        ciclo de desenvolvimento da
+                        soja nas URs de MIP no Paraná, safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="pizza-chart-soja-percevejos-total-pr" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+          <!-- Sessão 2 - Coluna Direita -->
+
+
+          <section class="col-lg-5 connectedSortable">
+            <h3>O cenário de lagartas e percevejos em soja Bt(RR2) e não Bt(RR1)</h3>
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="#tabSojaBt" data-toggle="tab">Soja Bt (RR2)</a>
+                </li>
+                <li>
+                  <a href="#tabSojaNBt" data-toggle="tab">Soja Não Bt (RR1)</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tabSojaBt">
+                  <!-- <h3>Análises com Soja Bt (RR2)</h3> -->
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Ocorrência percentual média por grupo de lagartas em três períodos do ciclo
+                        da soja Bt (RR2) nas URs
+                        de MIP no Paraná, safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="bar-chart-sojabt-pr" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Distribuição percentual da participação das espécies no complexo de
+                        lagartas pragas da soja Bt (RR2)
+                        nas URs de MIP no Paraná, safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="bar-chart-sojabt-pr-total" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tabSojaNBt">
+
+                  <!-- <h3>Análises com Soja não Bt (RR1)</h3> -->
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Ocorrência percentual média por grupo de lagartas em três períodos do ciclo
+                        da soja não Bt (RR1) nas URs
+                        de MIP no Paraná, safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="bar-chart-sojanbt-pr" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="box box-default">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Distribuição percentual da participação das espécies no complexo de
+                        lagartas pragas da soja não Bt (RR1)
+                        nas URs de MIP no Paraná, safra 2016/17.</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <canvas id="bar-chart-sojanbt-pr-total" width="800" height="450"></canvas>
+                        </div>
+                        <div class="col-lg-12 legenda-graficos">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
+                          elementum, nunc lectus pellentesque
+                          nulla, commodo vulputate nulla mi sit amet eros. Lorem ipsum dolor sit amet, consectetur
+                          adipiscing
+                          elit. In tempor, quam nec ultricies elementum, nunc lectus pellentesque nulla, commodo
+                          vulputate
+                          nulla mi sit amet eros.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.0
+      </div>
+      <strong>Copyright &copy; 2018-2018
+        <a href="https://adminlte.io">Grazionale</a>.</strong> Todos os direitos reservados.
+    </footer>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery 3 -->
+  <script src="style/jquery/dist/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+
+  <script src="style/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="dist/js/loadJson.js"></script>
+  <script src="dist/js/parana.js"></script>
+  <script src="dist/js/generator.js"></script>
+  <script src="dist/js/counters.js"></script>
+  <script src="dist/js/graph.js"></script>
+  <script src="dist/js/filters.js"></script>
+  <script src="dist/js/functions.js"></script>
+  <script src="dist/js/utils.js"></script>
+
+</body>
+
+</html>

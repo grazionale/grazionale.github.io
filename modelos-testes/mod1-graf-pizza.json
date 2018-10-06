@@ -1,0 +1,9 @@
+{
+  labels: ["0-30 dias", "30-60 dias", "60-90 dias"],
+  pragas: [
+    {label: "Anticarsia gemmatalis", backgroundColor: "#1048A9", data: [30,20,10]},
+    {label: "Chrysodexis includens", backgroundColor: "#A6120A", data: [50,30,40]},
+    {label: "Spodoptera spp", backgroundColor: "#00B74A", data: [10,40,67]},
+    {label: "Grupo Heliothinae", backgroundColor: "#FFCB1E", data: [20,50,20]}
+  ]
+}
