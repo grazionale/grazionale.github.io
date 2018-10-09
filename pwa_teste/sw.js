@@ -7,11 +7,11 @@ self.addEventListener('install', function (event) {
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll([
         '/',
-        '/index.html',
-        '/styles.css',
-        '/app.js',
-        '/manifest.js',
-        '/vendor.js',
+        'index.html',
+        'styles.css',
+        'app.js',
+        'manifest.js',
+        'vendor.js',
       ]);
     })
   )
