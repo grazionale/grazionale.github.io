@@ -1,0 +1,29 @@
+.legenda-graficos{
+    padding-top: 20px;
+}
+
+.box-title{
+    width: 93%;
+}
+
+.box.box-default{
+    border-color: #fff;
+}
+
+.nav-tabs-custom>.nav-tabs>li.active{
+    border-color: #00a65a;
+}
+
+.line-space{
+    height: 5px;
+}
+
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+.gg-inner-title{
+    margin-bottom: 30px;
+}
