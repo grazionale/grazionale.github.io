@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 var CACHE_NAME = 'static-v1';
 
 self.addEventListener('install', function (event) {
