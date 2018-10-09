@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- Chart.Js-->
@@ -143,7 +143,7 @@
       <section class="content-header">
         <h1>
           Manejo Integrado de Pragas - Principais Resultados
-          <small>Safra 2019/2020</small>
+          <small>Safra 2017/2018</small>
         </h1>
         <!-- <ol class="breadcrumb">
           <li>
@@ -156,10 +156,6 @@
 
       <!-- Main content -->
       <section class="content">
-        <!-- Small boxes (Stat box) -->
-
-        <!-- Fullwidth Row-->
-
         <div class="row">
           <section class="col-lg-12">
             <div class="box box-default">
@@ -242,247 +238,405 @@
           </section>
         </div>
         <div class="row">
-          <section class="col-lg-12">
-            <div class="box box-default">
-              <div class="box-header with-border">
-                <h3 class="box-title">Filtros</h3>
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-box-tool" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="box-body">
-                <div class="row">
-                  <div class="col-lg-12 col-sm-12">
-                    <div class="filtros">
-                      <div class="box-body border-radius-none">
-                        <div class="col-lg-3">
-                          <div class="row ano-safra">
-                            <div class="col-xs-3 ">
-                              <label>Selecionar ano da Safra</label>
-                            </div>
-                            <div class="col-xs-9 ">
-                              <select id="ano-da-safra" class="form-control">
-                                <option value="2017/2018">2017/2018</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <div class="line-space"></div>
-
-                          <div class="row regiao-ur">
-                            <div class="col-xs-3 ">
-                              <label>Região</label>
-                            </div>
-                            <div class="col-xs-9 ">
-                              <input type="checkbox" name="todas" value="Todas" id="regiao-todas-safra" checked onclick="checarTodasRegioes()">Todas
-                              <input type="checkbox" name="norte" value="Norte" id="regiao-norte-safra" checked>Norte
-                              <input type="checkbox" name="noroeste" value="Noroeste" id="regiao-noroeste-safra"
-                                checked>Noroeste
-                              <input type="checkbox" name="sul" value="Sul" id="regiao-sul-safra" checked>Sul
-                              <input type="checkbox" name="sudoeste" value="Sudoeste" id="regiao-sudoeste-safra"
-                                checked>Sudoeste
-                              <input type="checkbox" name="oeste" value="Oeste" id="regiao-oeste-safra" checked>Oeste
-                            </div>
-                          </div>
-
-                          <div class="line-space"></div>
-
-                          <div class="row municipio-ur">
-                            <div class="col-xs-3 ">
-                              <label>Município</label>
+          <section class="col-lg-6">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Filtros</li>
+              </ul>
+              <div class="tab-content no-padding">
+                <div class="tab-pane active" id="tabFiltrosUm">
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      <div class="filtros">
+                        <div class="box-body border-radius-none">
+                          <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>lagartas</b> em três
+                            períodos do ciclo da soja.</h4>
+                          <div class="col-lg-6">
+                            <div class="row ano-safra">
+                              <div class="col-xs-4 no-padding">
+                                <label>Selecionar ano da Safra</label>
+                              </div>
+                              <div class="col-xs-8 no-padding">
+                                <select id="ano-da-safra" class="form-control">
+                                  <option value="2017/2018">2017/2018</option>
+                                </select>
+                              </div>
                             </div>
 
-                            <div class="col-xs-9 ">
-                              <select id="municiopio-regiao" class="form-control">
-                                <option value="Todos">Todos</option>
-                                <option value="CORNÉLIO PROCÓPIO">CORNÉLIO PROCÓPIO</option>
-                                <option value="MARIÓPOLIS PR">MARIÓPOLIS PR</option>
-                              </select>
+                            <div class="line-space"></div>
+
+                            <div class="row regiao-ur">
+                              <div class="col-xs-4 no-padding">
+                                <label>Região</label>
+                              </div>
+                              <div class="col-xs-8 no-padding">
+                                <input type="checkbox" name="todas" value="Todas" id="regiao-todas-safra" checked
+                                  onclick="checarTodasRegioes()">Todas
+                                <input type="checkbox" name="norte" value="Norte" id="regiao-norte-safra" checked>Norte
+                                <input type="checkbox" name="noroeste" value="Noroeste" id="regiao-noroeste-safra"
+                                  checked>Noroeste
+                                <input type="checkbox" name="sul" value="Sul" id="regiao-sul-safra" checked>Sul
+                                <input type="checkbox" name="sudoeste" value="Sudoeste" id="regiao-sudoeste-safra"
+                                  checked>Sudoeste
+                                <input type="checkbox" name="oeste" value="Oeste" id="regiao-oeste-safra" checked>Oeste
+                              </div>
                             </div>
 
+                            <div class="line-space"></div>
 
-                          </div>
+                            <div class="row municipio-ur">
+                              <div class="col-xs-4 no-padding">
+                                <label>Município</label>
+                              </div>
 
-                          <div class="line-space"></div>
+                              <div class="col-xs-8 no-padding">
+                                <select id="municiopio-regiao" class="form-control">
+                                  <option value="Todos">Todos</option>
+                                  <option value="CORNÉLIO PROCÓPIO">CORNÉLIO PROCÓPIO</option>
+                                  <option value="MARIÓPOLIS PR">MARIÓPOLIS PR</option>
+                                </select>
+                              </div>
 
-                          <div class="row produtor-ur">
-                            <div class="col-xs-3 "><label>Produtor</label></div>
-                            <div class="col-xs-9 "><input type="text" id="produtor-safra" class="form-control"
-                                placeholder="Produtor"></div>
 
-                          </div>
+                            </div>
 
-                          <div class="line-space"></div>
-                          <div class="line-space"></div>  
+                            <div class="line-space"></div>
 
-                          <div class="row data-amostra">
-                              <div class="col-xs-3 ">
+                            <div class="row produtor-ur">
+                              <div class="col-xs-4 no-padding">
+                                <label>Produtor</label>
+                              </div>
+                              <div class="col-xs-8 no-padding">
+                                <input type="text" id="produtor-safra" class="form-control" placeholder="Produtor">
+                              </div>
+
+                            </div>
+
+                            <div class="line-space"></div>
+                            <div class="line-space"></div>
+
+                            <div class="row data-amostra">
+                              <div class="col-xs-4 no-padding">
                                 <label for="data-amostra">Período da Amostra</label>
                               </div>
-                              <div class="col-xs-6 ">
+                              <div class="col-xs-8 no-padding">
                                 <input id="data-inicial-amostra" type="date" value="" class="form-control">
                                 <input id="data-final-amostra" type="date" value="" class="form-control">
                               </div>
-  
+
                             </div>
                             <div class="line-space"></div>
                             <div class="line-space"></div>
-                        </div>
-                        <div class="col-lg-3">
-                          <div class="row tecnico-ur">
-                            <div class="col-xs-3">
-                              <label>Responsável Técnico</label>
-                            </div>
-                            <div class="col-xs-9">
-                              <select id="tecnico-safra" class="form-control">
-                                <option value="Todos">Todos</option>
-                                <option value="Técnico De Agronomia">Técnico De Agronomia</option>
-                                <option value="IVANDERSON BORELLI">IVANDERSON BORELLI</option>
-                              </select>
-                            </div>
                           </div>
-
-                          <div class="line-space"></div>
-
-                          <div class="id-ur row">
-                            <div class="col-xs-3">
-                              <label>Identificação da UR</label>
-                            </div>
-                            <div class="col-xs-9">
-                              <input type="text" id="id-ur" class="form-control">
-                            </div>
-                          </div>
-
-                          <div class="cultivar row">
-                            <div class="col-xs-3">
-                              <label>Cultivar</label>
-                            </div>
-                            <div class="col-xs-9">
-                              <select id="cultivar-safra" class="form-control">
-                                <option value="Todos">Todos</option>
-                                <option value="TMG -  7262">TMG - 7262</option>
-                                <option value="BMX RAIO Ipro">BMX RAIO Ipro</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <div class="line-space"></div>
-                          <div class="line-space"></div>
-
-                          <div class="tipo-de-soja row">
-                            <div class="col-xs-3">
-                              <label>Soja Bt?</label>
-                            </div>
-                            <div class="col-xs-9">
-                              <div>
-                                <input type="radio" name="tipo-soja" value="tipo-soja-ambos" checked />
-                                <label for="tipo-soja-ambos">Ambos</label>
+                          <div class="col-lg-6">
+                            <div class="row tecnico-ur">
+                              <div class="col-xs-4">
+                                <label>Responsável Técnico</label>
                               </div>
-                              <div>
-                                <input type="radio" name="tipo-soja" value="tipo-soja-sim" />
-                                <label for="tipo-soja-sim">Sim</label>
-                              </div>
-                              <div>
-                                <input type="radio" name="tipo-soja" value="tipo-soja-nao" />
-                                <label for="tipo-soja-nao">Não</label>
+                              <div class="col-xs-8">
+                                <select id="tecnico-safra" class="form-control">
+                                  <option value="Todos">Todos</option>
+                                  <option value="Técnico De Agronomia">Técnico De Agronomia</option>
+                                  <option value="IVANDERSON BORELLI">IVANDERSON BORELLI</option>
+                                </select>
                               </div>
                             </div>
-                          </div>
 
-                          <div class="line-space"></div>
-                          <div class="line-space"></div>
+                            <div class="line-space"></div>
 
-                          <div class="ferrugem-soja row" id="ferrugem-safra">
-                            <div class="col-xs-3">
-                              <label>Resitênte a Ferrugem?</label>
-                            </div>
-                            <div class="col-xs-9">
-                              <div>
-                                <input type="radio" name="ferrugem" value="ferrugem-ambos" checked />
-                                <label for="ferrugem-ambos">Ambos</label>
+                            <div class="id-ur row">
+                              <div class="col-xs-4">
+                                <label>Identificação da UR</label>
                               </div>
-                              <div>
-                                <input type="radio" name="ferrugem" value="ferrugem-sim" />
-                                <label for="ferrugem-sim">Sim</label>
-                              </div>
-                              <div>
-                                <input type="radio" name="ferrugem" value="ferrugem-nao" />
-                                <label for="ferrugem-nao">Não</label>
+                              <div class="col-xs-8">
+                                <input type="text" id="id-ur" class="form-control">
                               </div>
                             </div>
-                          </div>
 
-                        </div>
-                        <div class="col-lg-3">
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="filtros">
-                      <div class="box-body border-radius-none">
-                        <div class="col-lg-3">
-                          <div class="row data-amostra">
-                            <div class="col-xs-12 ">
-                              <button id="button-limpar-data" class="btn btn-success"><i class="fa fa-calendar-times-o"></i>
-                                Limpar</button>
-                              <button id="filtrar-buscar" onclick="filtrar()" class="btn btn-success"><i class="fa fa-search"></i>
-                                Filtrar</button>
+                            <div class="cultivar row">
+                              <div class="col-xs-4">
+                                <label>Cultivar</label>
+                              </div>
+                              <div class="col-xs-8">
+                                <select id="cultivar-safra" class="form-control">
+                                  <option value="Todos">Todos</option>
+                                  <option value="TMG -  7262">TMG - 7262</option>
+                                  <option value="BMX RAIO Ipro">BMX RAIO Ipro</option>
+                                </select>
+                              </div>
                             </div>
+
+                            <div class="line-space"></div>
+                            <div class="line-space"></div>
+
+                            <div class="tipo-de-soja row">
+                              <div class="col-xs-4">
+                                <label>Soja Bt?</label>
+                              </div>
+                              <div class="col-xs-8">
+                                <div>
+                                  <input type="radio" name="tipo-soja" value="tipo-soja-ambos" checked />
+                                  <label for="tipo-soja-ambos">Ambos</label>
+                                </div>
+                                <div>
+                                  <input type="radio" name="tipo-soja" value="tipo-soja-sim" />
+                                  <label for="tipo-soja-sim">Sim</label>
+                                </div>
+                                <div>
+                                  <input type="radio" name="tipo-soja" value="tipo-soja-nao" />
+                                  <label for="tipo-soja-nao">Não</label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="line-space"></div>
+                            <div class="line-space"></div>
+
+                            <div class="ferrugem-soja row" id="ferrugem-safra">
+                              <div class="col-xs-4">
+                                <label>Resitênte a Ferrugem?</label>
+                              </div>
+                              <div class="col-xs-8">
+                                <div>
+                                  <input type="radio" name="ferrugem" value="ferrugem-ambos" checked />
+                                  <label for="ferrugem-ambos">Ambos</label>
+                                </div>
+                                <div>
+                                  <input type="radio" name="ferrugem" value="ferrugem-sim" />
+                                  <label for="ferrugem-sim">Sim</label>
+                                </div>
+                                <div>
+                                  <input type="radio" name="ferrugem" value="ferrugem-nao" />
+                                  <label for="ferrugem-nao">Não</label>
+                                </div>
+                              </div>
+                            </div>
+
                           </div>
                         </div>
                       </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="row">
-          <section class="col-lg-12">
-            <div class="box box-default">
-              <div class="box-header with-border">
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-box-tool" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="box-body">
-                <div class="row">
-                  <div class="col-lg-6 col-sm-6">
-                    <div class="canvas-graph-generator">
-                      <div class="box-body border-radius-none">
-                        <h3>Gráfico de Barras</h3>
-                        <canvas id="canvas-generator-graph-bar" width="800" height="450"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6">
-                    <div class="canvas-graph-generator">
-                      <div class="box-body border-radius-none">
-                        <h3>Gráfico de Pizza</h3>
-                        <canvas id="canvas-generator-graph-pizza" width="800" height="450"></canvas>
+                      <div class="filtros">
+                        <div class="box-body border-radius-none">
+                          <div class="col-lg-6">
+                            <div class="row data-amostra">
+                              <div class="col-xs-12 ">
+                                <button id="button-limpar-data" class="btn btn-success">
+                                  <i class="fa fa-calendar-times-o"></i>
+                                  Limpar</button>
+                                <button id="filtrar-buscar" onclick="filtrar()" class="btn btn-success">
+                                  <i class="fa fa-search"></i>
+                                  Gerar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Gráficos de Barras</li>
+                <li class="active"><a href="#tabLagartasBarras" data-toggle="tab" aria-expanded="false">Lagartas</a></li>
+                <li><a href="#tabPercevejosBarras" data-toggle="tab" aria-expanded="true">Percevejos</a></li>
+              </ul>
+              <div class="tab-content no-padding">
+                <div class="tab-pane active" id="tabLagartasBarras">
+
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      <div class="canvas-graph-generator">
+                        <div class="box-body border-radius-none">
+                          <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>lagartas</b> em três
+                            períodos do ciclo da soja.</h4>
+                          <canvas id="canvas-generator-graph-bar" width="800" height="450"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="tab-pane" id="tabPercevejosBarras">
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      <div class="canvas-graph-generator-percevejos">
+                        <div class="box-body border-radius-none">
+                          <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>percevejos</b> em três
+                            períodos do ciclo da soja.</h4>
+                          <canvas id="canvas-generator-graph-bar-percevejos" width="800" height="450"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="col-lg-6">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Tabelas</li>
+                <li class="active"><a href="#tabLagartasTabela" data-toggle="tab" aria-expanded="false">Lagartas</a></li>
+                <li><a href="#tabPercevejosTabela" data-toggle="tab" aria-expanded="true">Percevejos</a></li>
+              </ul>
+              <div class="tab-content no-padding">
+                <div class="tab-pane active" id="tabLagartasTabela">
+                  <div class="tabelas">
+                    <div class="box-body border-radius-none">
+                      <div class="col-lg-12">
+                        <!--Table-->
+                        <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>lagartas</b> em três
+                          períodos do ciclo da soja.</h4>
+                        <table id="dinamic-table" class="table table-striped table-hover table-sm">
+                          <!--Table head-->
+                          <thead>
+                            <tr>
+                              <th>Lagartas</th>
+                              <th>0-30 dias</th>
+                              <th>31-60 dias</th>
+                              <th>61-150 dias</th>
+                            </tr>
+                          </thead>
+                          <!--Table head-->
+                          <!--Table body-->
+                          <tbody>
+                            <tr>
+                              <th>Anticarsia gemmatalis</th>
+                              <td id="anticaria-0-30"></td>
+                              <td id="anticaria-31-60"></td>
+                              <td id="anticaria-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Chrysodeixis includens</th>
+                              <td id="chrys-0-30"></td>
+                              <td id="chrys-31-60"></td>
+                              <td id="chrys-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Spodoptera spp</th>
+                              <td id="spo-0-30"></td>
+                              <td id="spo-31-60"></td>
+                              <td id="spo-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Grupo Heliothinae</th>
+                              <td id="helio-0-30"></td>
+                              <td id="helio-31-60"></td>
+                              <td id="helio-61-150"></td>
+                            </tr>
+                          </tbody>
+                          <!--Table body-->
+                        </table>
+                        <!--Table-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tabPercevejosTabela">
+                  <div class="tabelas">
+                    <div class="box-body border-radius-none">
+                      <div class="col-lg-12">
+                        <!--Table-->
+                        <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>percevejos</b> em três
+                          períodos do ciclo da soja.</h4>
+                        <table id="dinamic-table" class="table table-striped table-hover table-sm">
+                          <!--Table head-->
+                          <thead>
+                            <tr>
+                              <th>Percevejos</th>
+                              <th>0-30 dias</th>
+                              <th>31-60 dias</th>
+                              <th>61-150 dias</th>
+                            </tr>
+                          </thead>
+                          <!--Table head-->
+                          <!--Table body-->
+                          <tbody>
+                            <tr>
+                              <th>Nazera viridula</th>
+                              <td id="nazera-0-30"></td>
+                              <td id="nazera-31-60"></td>
+                              <td id="nazera-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Piezodorus guildinii</th>
+                              <td id="piezodorus-0-30"></td>
+                              <td id="piezodorus-31-60"></td>
+                              <td id="piezodorus-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Euschistus heros</th>
+                              <td id="eusch-0-30"></td>
+                              <td id="eusch-31-60"></td>
+                              <td id="eusch-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Dichelops melacanthus</th>
+                              <td id="dichelops-0-30"></td>
+                              <td id="dichelops-31-60"></td>
+                              <td id="dichelops-61-150"></td>
+                            </tr>
+                            <tr>
+                              <th>Outros</th>
+                              <td id="otrs-0-30"></td>
+                              <td id="otrs-31-60"></td>
+                              <td id="otrs-61-150"></td>
+                            </tr>
+                          </tbody>
+                          <!--Table body-->
+                        </table>
+                        <!--Table-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Gráficos de Pizza</li>
+                <li class="active"><a href="#tabLagartasPizza" data-toggle="tab" aria-expanded="false">Lagartas</a></li>
+                <li><a href="#tabPercevejosPizza" data-toggle="tab" aria-expanded="true">Percevejos</a></li>
+              </ul>
+              <div class="tab-content no-padding">
+                <div class="tab-pane active" id="tabLagartasPizza">
+
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      <div class="canvas-graph-generator">
+                        <div class="box-body border-radius-none">
+                          <h4 class="gg-inner-title">Distribuição percentual da participação das espécies no complexo
+                            de <b>lagartas</b>.</h4>
+                          <canvas id="canvas-generator-graph-pizza" width="800" height="450"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="tab-pane" id="tabPercevejosPizza">
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      <div class="canvas-graph-generator-percevejos">
+                        <div class="box-body border-radius-none">
+                          <h4 class="gg-inner-title">Distribuição percentual da participação das espécies no complexo
+                            de <b>percevejos</b>.</h4>
+                          <canvas id="canvas-generator-graph-pizza-percevejos" width="800" height="450"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
-        <div class="row">
+
+        <!-- <div class="row">
           <section class="col-lg-12">
             <div class="box box-default">
               <div class="box-header with-border">
@@ -502,7 +656,7 @@
                   </div>
                   <div class="col-lg-6 col-sm-6">
                     <div class="box-body border-radius-none">
-                      <h3>Tabela</h3>
+
 
                     </div>
                   </div>
@@ -510,11 +664,11 @@
               </div>
             </div>
           </section>
-        </div>
+        </div> -->
         <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
+        <!-- <div class="row"> -->
+        <!-- Left col -->
+        <!-- <section class="col-lg-7 connectedSortable">
             <h3>O cenário de lagartas e percevejos em soja no Paranásafra 2016/17</h3>
             <div class="nav-tabs-custom">
               <ul class="nav nav-tabs">
@@ -627,14 +781,14 @@
                 </div>
               </div>
             </div>
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          </section> -->
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
 
-          <!-- Sessão 2 - Coluna Direita -->
+        <!-- Sessão 2 - Coluna Direita -->
 
 
-          <section class="col-lg-5 connectedSortable">
+        <!-- <section class="col-lg-5 connectedSortable">
             <h3>O cenário de lagartas e percevejos em soja Bt(RR2) e não Bt(RR1)</h3>
             <div class="nav-tabs-custom">
               <ul class="nav nav-tabs">
@@ -647,8 +801,8 @@
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="tabSojaBt">
-                  <!-- <h3>Análises com Soja Bt (RR2)</h3> -->
-                  <div class="box box-default">
+                  <h3>Análises com Soja Bt (RR2)</h3> -->
+        <!-- <div class="box box-default">
                     <div class="box-header with-border">
                       <h3 class="box-title">Ocorrência percentual média por grupo de lagartas em três períodos do ciclo
                         da soja Bt (RR2) nas URs
@@ -678,8 +832,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="box box-default">
+                  </div> -->
+        <!-- <div class="box box-default">
                     <div class="box-header with-border">
                       <h3 class="box-title">Distribuição percentual da participação das espécies no complexo de
                         lagartas pragas da soja Bt (RR2)
@@ -711,10 +865,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="tabSojaNBt">
+                <div class="tab-pane" id="tabSojaNBt"> -->
 
-                  <!-- <h3>Análises com Soja não Bt (RR1)</h3> -->
-                  <div class="box box-default">
+        <!-- <h3>Análises com Soja não Bt (RR1)</h3> -->
+        <!-- <div class="box box-default">
                     <div class="box-header with-border">
                       <h3 class="box-title">Ocorrência percentual média por grupo de lagartas em três períodos do ciclo
                         da soja não Bt (RR1) nas URs
@@ -744,9 +898,9 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <div class="box box-default">
+        <!-- <div class="box box-default">
                     <div class="box-header with-border">
                       <h3 class="box-title">Distribuição percentual da participação das espécies no complexo de
                         lagartas pragas da soja não Bt (RR1)
@@ -780,9 +934,9 @@
                 </div>
               </div>
             </div>
-          </section>
-          <!-- right col -->
-        </div>
+          </section> -->
+        <!-- right col -->
+        <!-- </div> -->
         <!-- /.row (main row) -->
       </section>
       <!-- /.content -->
@@ -793,7 +947,7 @@
         <b>Version</b> 1.0.0
       </div>
       <strong>Copyright &copy; 2018-2018
-        <a href="https://adminlte.io">Grazionale</a>.</strong> Todos os direitos reservados.
+        <a href="https://github.com/grazionale" target="_blank">Grazionale</a>.</strong> Todos os direitos reservados.
     </footer>
   </div>
   <!-- ./wrapper -->

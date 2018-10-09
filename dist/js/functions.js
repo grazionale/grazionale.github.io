@@ -277,3 +277,208 @@ function generateDataForGraphBar(dados) {
 
 }
 
+function generateDataForGraphBarPercevejos(dados) {
+    var primeira_fase = generateDataFase("primeira", dados);
+    var segunda_fase = generateDataFase("segunda", dados);
+    var terceira_fase = generateDataFase("terceira", dados);
+    var total_nazera_primeira_fase = 0; var num_nazera_primeira_fase = 0;
+    var total_piezoduros_primeira_fase = 0; var num_piezoduros_primeira_fase = 0;
+    var total_euschistus_primeira_fase = 0; var num_euschistus_primeira_fase = 0;
+    var total_dichelops_primeira_fase = 0; var num_dichelops_primeira_fase = 0;
+    var total_outros_primeira_fase = 0; var num_outros_primeira_fase = 0; 
+
+    //Calculos referentes a primeira fase
+    $.each(primeira_fase, function (samplePestSet, samplePest) {
+        //console.log(samplePest);
+        if (samplePest.pest.scientificName == "Nazera viridula") {
+
+            total_nazera_primeira_fase = total_nazera_primeira_fase + samplePest.value;
+            num_nazera_primeira_fase++;
+
+        } else if (samplePest.pest.scientificName == "Piezodorus guildinii") {
+
+            total_piezoduros_primeira_fase = total_piezoduros_primeira_fase + samplePest.value;
+            num_piezoduros_primeira_fase++;
+
+        } else if (samplePest.pest.scientificName == "Euschistus heros") {
+
+            total_euschistus_primeira_fase = total_euschistus_primeira_fase + samplePest.value;
+            num_euschistus_primeira_fase++;
+
+        } else if (samplePest.pest.scientificName == "Euschistus heros") {
+
+            total_dichelops_primeira_fase = total_dichelops_primeira_fase + samplePest.value;
+            num_dichelops_primeira_fase++;
+
+        } else if(samplePest.pest.scientificName == "Outros") {
+            total_outros_primeira_fase = total_outros_primeira_fase + samplePest.value;
+            num_outros_primeira_fase++;
+        } else{
+
+        }
+    });
+
+    //Calculos referentes a segunda fase
+    var total_nazera_segunda_fase = 0; var num_nazera_segunda_fase = 0;
+    var total_piezoduros_segunda_fase = 0; var num_piezoduros_segunda_fase = 0;
+    var total_euschistus_segunda_fase = 0; var num_euschistus_segunda_fase = 0;
+    var total_dichelops_segunda_fase = 0; var num_dichelops_segunda_fase = 0;
+    var total_outros_segunda_fase = 0; var num_outros_segunda_fase = 0;
+
+    $.each(segunda_fase, function (samplePestSet, samplePest) {
+        //console.log(samplePest);
+        if (samplePest.pest.scientificName == "Nazera viridula") {
+
+            total_nazera_segunda_fase = total_nazera_segunda_fase + samplePest.value;
+            num_nazera_segunda_fase++;
+
+        } else if (samplePest.pest.scientificName == "Piezodorus guildinii") {
+
+            total_piezoduros_segunda_fase = total_piezoduros_segunda_fase + samplePest.value;
+            num_piezoduros_segunda_fase++;
+
+        } else if (samplePest.pest.scientificName == "Euschistus heros") {
+
+            total_euschistus_segunda_fase = total_euschistus_segunda_fase + samplePest.value;
+            num_euschistus_segunda_fase++;
+
+        } else if (samplePest.pest.scientificName == "Euschistus heros") {
+
+            total_dichelops_segunda_fase = total_dichelops_segunda_fase + samplePest.value;
+            num_dichelops_segunda_fase++;
+
+        } else if(samplePest.pest.scientificName == "Outros"){
+            total_outros_segunda_fase = total_outros_segunda_fase + samplePest.value;
+            num_outros_segunda_fase++;
+        } else {
+
+        }
+    });
+
+
+
+    //Calculos referentes a terceira fase
+    var total_nazera_terceira_fase = 0; var num_nazera_terceira_fase = 0;
+    var total_piezoduros_terceira_fase = 0; var num_piezoduros_terceira_fase = 0;
+    var total_euschistus_terceira_fase = 0; var num_euschistus_terceira_fase = 0;
+    var total_dichelops_terceira_fase = 0; var num_dichelops_terceira_fase = 0;
+    var total_outros_terceira_fase = 0; var num_outros_terceira_fase = 0;
+
+    $.each(terceira_fase, function (samplePestSet, samplePest) {
+        //console.log(samplePest);
+        if (samplePest.pest.scientificName == "Nazera viridula") {
+
+            total_nazera_terceira_fase = total_nazera_terceira_fase + samplePest.value;
+            num_nazera_terceira_fase++;
+
+        } else if (samplePest.pest.scientificName == "Piezodorus guildinii") {
+
+            total_piezoduros_terceira_fase = total_piezoduros_terceira_fase + samplePest.value;
+            num_piezoduros_terceira_fase++;
+
+        } else if (samplePest.pest.scientificName == "Euschistus heros") {
+
+            total_euschistus_terceira_fase = total_euschistus_terceira_fase + samplePest.value;
+            num_euschistus_terceira_fase++;
+
+        } else if (samplePest.pest.scientificName == "Euschistus heros") {
+
+            total_dichelops_terceira_fase = total_dichelops_terceira_fase + samplePest.value;
+            num_dichelops_terceira_fase++;
+
+        } else if(samplePest.pest.scientificName == "Outros") {
+            total_outros_terceira_fase = total_outros_terceira_fase + samplePest.value;
+            num_outros_terceira_fase++;
+        } else {
+
+        }
+    });
+
+    //Calcular os valores em porcentagem
+    //Primeira Fase
+    var total_valores_primeira_fase = total_nazera_primeira_fase + total_piezoduros_primeira_fase + total_euschistus_primeira_fase + total_dichelops_primeira_fase + total_outros_primeira_fase;
+    var porcentagem_nazera_primeira_fase = parseFloat((total_nazera_primeira_fase * 100) / total_valores_primeira_fase).toFixed(2);
+    var porcentagem_piezoduros_primeira_fase = parseFloat((total_piezoduros_primeira_fase * 100) / total_valores_primeira_fase).toFixed(2);
+    var porcentagem_euschistus_primeira_fase = parseFloat((total_euschistus_primeira_fase * 100) / total_valores_primeira_fase).toFixed(2);
+    var porcentagem_dichelops_primeira_fase = parseFloat((total_dichelops_primeira_fase * 100) / total_valores_primeira_fase).toFixed(2);
+    var porcentagem_outros_primeira_fase = parseFloat((total_outros_primeira_fase * 100) / total_valores_primeira_fase).toFixed(2);
+
+    //Segunda Fase
+    var total_valores_segunda_fase = total_nazera_segunda_fase + total_piezoduros_segunda_fase + total_euschistus_segunda_fase + total_dichelops_segunda_fase + total_outros_segunda_fase;
+    var porcentagem_nazera_segunda_fase = parseFloat((total_nazera_segunda_fase * 100) / total_valores_segunda_fase).toFixed(2);
+    var porcentagem_piezoduros_segunda_fase = parseFloat((total_piezoduros_segunda_fase * 100) / total_valores_segunda_fase).toFixed(2);
+    var porcentagem_euschistus_segunda_fase = parseFloat((total_euschistus_segunda_fase * 100) / total_valores_segunda_fase).toFixed(2);
+    var porcentagem_dichelops_segunda_fase = parseFloat((total_dichelops_segunda_fase * 100) / total_valores_segunda_fase).toFixed(2);
+    var porcentagem_outros_segunda_fase = parseFloat((total_outros_segunda_fase * 100) / total_valores_segunda_fase).toFixed(2);
+
+
+    //Terceira Fase
+    var total_valores_terceira_fase = total_nazera_terceira_fase + total_piezoduros_terceira_fase + total_euschistus_terceira_fase + total_dichelops_terceira_fase + total_outros_terceira_fase;
+    var porcentagem_nazera_terceira_fase = parseFloat((total_nazera_terceira_fase * 100) / total_valores_terceira_fase).toFixed(2);
+    var porcentagem_piezoduros_terceira_fase = parseFloat((total_piezoduros_terceira_fase * 100) / total_valores_terceira_fase).toFixed(2);
+    var porcentagem_euschistus_terceira_fase = parseFloat((total_euschistus_terceira_fase * 100) / total_valores_terceira_fase).toFixed(2);
+    var porcentagem_dichelops_terceira_fase = parseFloat((total_dichelops_terceira_fase * 100) / total_valores_terceira_fase).toFixed(2);
+    var porcentagem_outros_terceira_fase = parseFloat((total_outros_terceira_fase * 100) / total_valores_terceira_fase).toFixed(2);
+
+
+    var objeto = [
+        {
+            "fase": "Primeira",
+            "nazera": {
+                "valor": porcentagem_nazera_primeira_fase
+            },
+            "piezoduros": {
+                "valor": porcentagem_piezoduros_primeira_fase
+            },
+            "euschistus": {
+                "valor": porcentagem_euschistus_primeira_fase
+            },
+            "dichelops": {
+                "valor": porcentagem_dichelops_primeira_fase
+            },
+            "outros": {
+                "valor": porcentagem_outros_primeira_fase
+            }
+        },
+        {
+            "fase": "Segunda",
+            "nazera": {
+                "valor": porcentagem_nazera_segunda_fase
+            },
+            "piezoduros": {
+                "valor": porcentagem_piezoduros_segunda_fase
+            },
+            "euschistus": {
+                "valor": porcentagem_euschistus_segunda_fase
+            },
+            "dichelops": {
+                "valor": porcentagem_dichelops_segunda_fase
+            },
+            "outros": {
+                "valor": porcentagem_outros_segunda_fase
+            }
+        },
+        {
+            "fase": "Terceira",
+            "nazera": {
+                "valor": porcentagem_nazera_terceira_fase
+            },
+            "piezoduros": {
+                "valor": porcentagem_piezoduros_terceira_fase
+            },
+            "euschistus": {
+                "valor": porcentagem_euschistus_terceira_fase
+            },
+            "dichelops": {
+                "valor": porcentagem_dichelops_terceira_fase
+            },
+            "outros": {
+                "valor": porcentagem_outros_terceira_fase
+            }
+        }
+    ];
+
+    //console.log(objeto);
+    return objeto;
+
+}

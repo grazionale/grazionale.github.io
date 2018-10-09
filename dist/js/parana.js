@@ -1140,15 +1140,15 @@ function gerarGraficoPizzaDistribuicaoPercentualPercevejosNoParana() {
 $(function(){
 
     //Paraná
-    gerarGraficoBarrasParana();
-    gerarGraficoPizzaDistribuicaoPercentualLagartasNoParana();
-    gerarGraficoPizzaDistribuicaoPercentual("Paraná", false);
-    gerarGraficoPizzaDistribuicaoPercentual("Paraná", true);
-    gerarGraficoBarrasParanaSojaNBt();
-    gerarGraficoBarrasParanaSojaBt();
+    // gerarGraficoBarrasParana();
+    // gerarGraficoPizzaDistribuicaoPercentualLagartasNoParana();
+    // gerarGraficoPizzaDistribuicaoPercentual("Paraná", false);
+    // gerarGraficoPizzaDistribuicaoPercentual("Paraná", true);
+    // gerarGraficoBarrasParanaSojaNBt();
+    // gerarGraficoBarrasParanaSojaBt();
 
     //Percevejos
-    gerarGraficoPizzaDistribuicaoPercentualPercevejosNoParana();
+    //gerarGraficoPizzaDistribuicaoPercentualPercevejosNoParana();
 
     //Extras, contadores, arrumar um local correto para colocar as funções depois
     totalareacultivada();

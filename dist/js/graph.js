@@ -150,6 +150,160 @@ function gerarCanvasGraficoBarras(dados) {
 
 }
 
+function gerarTabelaDados(dados){
+    var valores = generateDataForGraphBar(dados);
+    //valores[0].anticarsia.valor, valores[1].anticarsia.valor, valores[2].anticarsia.valor
+    $('#anticaria-0-30').html(valores[0].anticarsia.valor + "%");
+    $('#anticaria-31-60').html(valores[1].anticarsia.valor + "%");
+    $('#anticaria-61-150').html(valores[2].anticarsia.valor + "%");
+    $('#chrys-0-30').html(valores[0].spodoptera.valor + "%");
+    $('#chrys-31-60').html(valores[1].spodoptera.valor + "%");
+    $('#chrys-61-150').html(valores[2].spodoptera.valor + "%");
+    $('#spo-0-30').html(valores[0].spodoptera.valor + "%");
+    $('#spo-31-60').html(valores[1].spodoptera.valor + "%");
+    $('#spo-61-150').html(valores[2].spodoptera.valor + "%");
+    $('#helio-0-30').html(valores[0].heliothinae.valor + "%");
+    $('#helio-31-60').html(valores[1].heliothinae.valor + "%");
+    $('#helio-61-150').html(valores[2].heliothinae.valor + "%");
+}
+
+function gerarCanvasGraficoPizzaPercevejos(dados){
+    //console.log(dados);
+    var valor_nazera = 0;
+    var valor_piezodorus = 0;
+    var valor_euschistus = 0;
+    var valor_dichelops = 0;
+    var valor_outros = 0;
+
+    var num_nazera = 0;
+    var num_piezodorus = 0;
+    var num_euschistus = 0;
+    var num_dichelops = 0;
+    var num_outros = 0;
+
+    var percevejos = buscarPercevejos(dados);
+    var cont = 0;
+
+    $.each(percevejos, function (praga, tipo) {
+        $.each(tipo, function (items, i) {
+            if (cont == 0) {
+                valor_nazera = valor_nazera + i.value;
+                num_nazera++;
+            } else if (cont == 1) {
+                valor_piezodorus = valor_piezodorus + i.value;
+                num_piezodorus++;
+            } else if (cont == 2) {
+                valor_euschistus = valor_euschistus + i.value;
+                num_euschistus++;
+            } else if (cont == 3){
+                valor_dichelops = valor_dichelops + i.value;
+                num_dichelops++;
+            } else {
+                valor_outros = valor_outros + i.value;
+                num_outros++;
+            }
+        });
+        cont++;
+    });
+
+    var total_percevejos = valor_nazera + valor_piezodorus + valor_euschistus + valor_dichelops + valor_outros;
+
+    var percentagem_nazera = parseFloat((valor_nazera * 100) / total_percevejos).toFixed(2);
+    var porcentagem_piezodorus = parseFloat((valor_piezodorus * 100) / total_percevejos).toFixed(2);
+    var porcentagem_euschistus = parseFloat((valor_euschistus * 100) / total_percevejos).toFixed(2);
+    var porcentagem_dichelops = parseFloat((valor_dichelops * 100) / total_percevejos).toFixed(2);
+    var porcentagem_outros = parseFloat((valor_outros * 100) / total_percevejos).toFixed(2);
+
+    var ctx = document.getElementById("canvas-generator-graph-pizza-percevejos").getContext('2d');
+    var myChart = new Chart(document.getElementById("canvas-generator-graph-pizza-percevejos"), {
+        type: 'doughnut',
+        data: {
+            labels: ["Nazera viridula", "Piezodorus guildinii", "Euschistus heros", "Dichelops melacanthus", "Outros"],
+            datasets: [{
+                label: "Paraná",
+                backgroundColor: ["#C10250", "#03BCBF", "#D3D945", "#FCB040"],
+                data: [percentagem_nazera, porcentagem_piezodorus, porcentagem_euschistus, porcentagem_dichelops, porcentagem_outros]
+            }]
+        },
+        options: {
+            title: {
+                display: false,
+                text: 'Titulo',
+                fontSize: 15
+            },
+            legend: {
+                position: 'left',
+                labels: {
+                    fontSize: 14,
+                }
+            }
+        }
+    });
+}
+
+function gerarCanvasGraficoBarrasPercevejos(dados){
+    var valores = generateDataForGraphBarPercevejos(dados);
+    //console.log(valores);
+    var ctx = document.getElementById("canvas-generator-graph-bar-percevejos").getContext('2d');
+    var myChart = new Chart(document.getElementById("canvas-generator-graph-bar-percevejos"), {
+        type: 'bar',
+        data: {
+            labels: ["0-30", "30-60", "60-150 dias"],
+            datasets: [
+                {
+                    label: "Nazera viridula",
+                    backgroundColor: "#C10250",
+                    data: [valores[0].nazera.valor, valores[1].nazera.valor, valores[2].nazera.valor]
+                }, {
+                    label: "Piezodorus guildinii",
+                    backgroundColor: "#03BCBF",
+                    data: [valores[0].piezoduros.valor, valores[1].piezoduros.valor, valores[2].piezoduros.valor]
+                },
+                {
+                    label: "Euschistus heros",
+                    backgroundColor: "#D3D945",
+                    data: [valores[0].euschistus.valor, valores[1].euschistus.valor, valores[2].euschistus.valor]
+                }, {
+                    label: "Dichelops melacanthus",
+                    backgroundColor: "#FCB040",
+                    data: [valores[0].dichelops.valor, valores[1].dichelops.valor, valores[2].dichelops.valor]
+                }, {
+                    label: "Outros",
+                    backgroundColor: "#b1b1b1",
+                    data: [valores[0].outros.valor, valores[1].outros.valor, valores[2].outros.valor]
+                }
+                
+            ]
+        },
+        options: {
+            title: {
+                display: false,
+                text: 'Título',
+                fontSize: 15
+            },
+            legend: {
+                position: 'bottom',
+                labels: {
+                    fontSize: 14,
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+
+                        min: 0,
+                        max: 100,
+                        callback: function (value) { return value + "%" }
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Percentage"
+                    }
+                }]
+            }
+        }
+    });
+}
 //Retorna dados filtrados a partir do filtro (front-end) que o usuário escolher.
 function filtrar(){
     var ano_safra = $("#ano-da-safra").val();
@@ -246,6 +400,8 @@ function filtrar(){
         }
         else if(obj.chart.canvas.id == "canvas-generator-graph-bar"){
             obj.destroy();
+        } else if (obj.chart.canvas.id == "canvas-generator-graph-pizza-percevejos"){
+            obj.destroy();
         } else {
 
         }
@@ -258,4 +414,8 @@ function filtrar(){
     
     gerarCanvasGraficoPizza(dados);
     gerarCanvasGraficoBarras(dados);
+    gerarTabelaDados(dados);
+
+    gerarCanvasGraficoPizzaPercevejos(dados);
+    gerarCanvasGraficoBarrasPercevejos(dados);
 }
