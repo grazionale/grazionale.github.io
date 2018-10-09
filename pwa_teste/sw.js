@@ -6,12 +6,12 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll([
-        '/',
-        'index.html',
-        'styles.css',
-        'app.js',
-        'manifest.js',
-        'vendor.js',
+        '/pwa_teste/',
+        '/pwa_teste/index.html',
+        '/pwa_teste/styles.css',
+        '/pwa_teste/app.js',
+        '/pwa_teste/manifest.js',
+        '/pwa_teste/vendor.js',
       ]);
     })
   )
