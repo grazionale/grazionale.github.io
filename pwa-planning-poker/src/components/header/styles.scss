@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  background-color: #2a0044;
+  height: 3.4em;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content > figure {
+  margin: 0 1em;
+  float: left;
+}
+
+.content img {
+  width: 2em;
+}
+
+.content > h1 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.4em;
+}

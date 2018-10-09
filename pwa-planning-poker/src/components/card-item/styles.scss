@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  display: inline-block;
+  background-color: #fafafa;
+  border-radius: 4px;
+  width: 5em;
+  height: 8em;
+  cursor: pointer;
+  margin: .4em;
+  border: solid 1px rgba(41, 0, 68, 0.7);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container:hover {
+  opacity: 0.75;
+}
+
+.opened {
+  width: 9.5em;
+  height: 15em;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container > span {
+  position: absolute;
+  font-size: 2.5em;
+  color: #2a0044;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.backButton {
+  position: absolute;
+  bottom: 0;
+  left: -1.5em;
+}
+
+.brandLogo {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 11em;
+}
+
+.opened > span {
+  font-size: 5.5em;
+  font-weight: 300;
+}

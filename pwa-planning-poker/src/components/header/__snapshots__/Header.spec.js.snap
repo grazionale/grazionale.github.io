@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="content"
+  >
+    <figure>
+      <img
+        alt="Logo brand"
+        src="test-file-stub"
+      />
+    </figure>
+    <h1>
+      AgilePoker
+    </h1>
+  </div>
+</header>
+`;
