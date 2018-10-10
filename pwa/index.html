@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- Chart.Js-->
@@ -29,7 +29,16 @@
   <!-- Style.css -->
   <link rel="stylesheet" href="style/style.css">
 
-  <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- Sweet Alert-->
+  <script src="dist/js/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+  <link rel="stylesheet" href="dist/js/sweetalert/sweetalert2.min.css">
+
+ <!-- testando highcharts -->
+ <script src="https://code.highcharts.com/highcharts.js"></script>  
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
 </head>
 
 <body class="hold-transition skin-green-light sidebar-mini">
@@ -178,7 +187,7 @@
                 <div class="row">
                   <div class="col-lg-4 col-sm-12">
                     <!-- Sobre o mip -->
-                    <div class="bg-green-gradient">
+                    <div class="bg-green-gradient info-box">
                       <div class="box-body border-radius-none">
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor, quam nec ultricies
@@ -257,10 +266,10 @@
                             períodos do ciclo da soja.</h4>
                           <div class="col-lg-6">
                             <div class="row ano-safra">
-                              <div class="col-xs-4 no-padding">
+                              <div class="col-xs-4">
                                 <label>Selecionar ano da Safra</label>
                               </div>
-                              <div class="col-xs-8 no-padding">
+                              <div class="col-xs-8">
                                 <select id="ano-da-safra" class="form-control">
                                   <option value="2017/2018">2017/2018</option>
                                 </select>
@@ -270,10 +279,10 @@
                             <div class="line-space"></div>
 
                             <div class="row regiao-ur">
-                              <div class="col-xs-4 no-padding">
+                              <div class="col-xs-4">
                                 <label>Região</label>
                               </div>
-                              <div class="col-xs-8 no-padding">
+                              <div class="col-xs-8">
                                 <input type="checkbox" name="todas" value="Todas" id="regiao-todas-safra" checked
                                   onclick="checarTodasRegioes()">Todas
                                 <input type="checkbox" name="norte" value="Norte" id="regiao-norte-safra" checked>Norte
@@ -289,11 +298,11 @@
                             <div class="line-space"></div>
 
                             <div class="row municipio-ur">
-                              <div class="col-xs-4 no-padding">
+                              <div class="col-xs-4">
                                 <label>Município</label>
                               </div>
 
-                              <div class="col-xs-8 no-padding">
+                              <div class="col-xs-8">
                                 <select id="municiopio-regiao" class="form-control">
                                   <option value="Todos">Todos</option>
                                   <option value="CORNÉLIO PROCÓPIO">CORNÉLIO PROCÓPIO</option>
@@ -307,10 +316,10 @@
                             <div class="line-space"></div>
 
                             <div class="row produtor-ur">
-                              <div class="col-xs-4 no-padding">
+                              <div class="col-xs-4">
                                 <label>Produtor</label>
                               </div>
-                              <div class="col-xs-8 no-padding">
+                              <div class="col-xs-8">
                                 <input type="text" id="produtor-safra" class="form-control" placeholder="Produtor">
                               </div>
 
@@ -320,10 +329,10 @@
                             <div class="line-space"></div>
 
                             <div class="row data-amostra">
-                              <div class="col-xs-4 no-padding">
+                              <div class="col-xs-4">
                                 <label for="data-amostra">Período da Amostra</label>
                               </div>
-                              <div class="col-xs-8 no-padding">
+                              <div class="col-xs-8">
                                 <input id="data-inicial-amostra" type="date" value="" class="form-control">
                                 <input id="data-final-amostra" type="date" value="" class="form-control">
                               </div>
@@ -442,7 +451,7 @@
             </div>
             <div class="nav-tabs-custom">
               <ul class="nav nav-tabs pull-left ui-sortable-handle">
-                <li class="pull-left header"><i class="fa fa-inbox"></i> Gráficos de Barras</li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Barras</li>
                 <li class="active"><a href="#tabLagartasBarras" data-toggle="tab" aria-expanded="false">Lagartas</a></li>
                 <li><a href="#tabPercevejosBarras" data-toggle="tab" aria-expanded="true">Percevejos</a></li>
               </ul>
@@ -455,7 +464,8 @@
                         <div class="box-body border-radius-none">
                           <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>lagartas</b> em três
                             períodos do ciclo da soja.</h4>
-                          <canvas id="canvas-generator-graph-bar" width="800" height="450"></canvas>
+                          <!-- <canvas id="canvas-generator-graph-bar" width="800" height="450"></canvas> -->
+                          <div id="canvas-generator-graph-bar" style="min-width: 310px; max-width: 800px; max-height: 650px;"></div>
                         </div>
                       </div>
                     </div>
@@ -469,7 +479,8 @@
                         <div class="box-body border-radius-none">
                           <h4 class="gg-inner-title">Ocorrência percentual média por grupo de <b>percevejos</b> em três
                             períodos do ciclo da soja.</h4>
-                          <canvas id="canvas-generator-graph-bar-percevejos" width="800" height="450"></canvas>
+                          <!-- <canvas id="canvas-generator-graph-bar-percevejos" width="800" height="450"></canvas> -->
+                          <div id="canvas-generator-graph-bar-percevejos" style="min-width: 310px; max-width: 800px; max-height: 650px;"></div>
                         </div>
                       </div>
                     </div>
@@ -477,6 +488,31 @@
                 </div>
               </div>
             </div>
+            <!-- <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Gráficos de Barras</li>
+                <li class="active"><a href="#tabLagartasBarras" data-toggle="tab" aria-expanded="false">Lagartas</a></li>
+                <li><a href="#tabPercevejosBarras" data-toggle="tab" aria-expanded="true">Percevejos</a></li>
+              </ul>
+              <div class="tab-content no-padding">
+                <div class="tab-pane active" id="tabLagartasBarras">
+
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      <div id="container2" style="min-width: 310px; max-width: 800px; max-height: 650px;"></div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="tab-pane" id="tabPercevejosBarras">
+                  <div class="box-body border-radius-none">
+                    <div class="col-lg-12">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
           </section>
 
 
@@ -602,7 +638,7 @@
             </div>
             <div class="nav-tabs-custom">
               <ul class="nav nav-tabs pull-left ui-sortable-handle">
-                <li class="pull-left header"><i class="fa fa-inbox"></i> Gráficos de Pizza</li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Pizza</li>
                 <li class="active"><a href="#tabLagartasPizza" data-toggle="tab" aria-expanded="false">Lagartas</a></li>
                 <li><a href="#tabPercevejosPizza" data-toggle="tab" aria-expanded="true">Percevejos</a></li>
               </ul>
@@ -615,7 +651,8 @@
                         <div class="box-body border-radius-none">
                           <h4 class="gg-inner-title">Distribuição percentual da participação das espécies no complexo
                             de <b>lagartas</b>.</h4>
-                          <canvas id="canvas-generator-graph-pizza" width="800" height="450"></canvas>
+                          <!-- <canvas id="canvas-generator-graph-pizza" width="800" height="450"></canvas> -->
+                          <div id="canvas-generator-graph-pizza" style="min-width: 310px; max-width: 800px; max-height: 750px;"></div>
                         </div>
                       </div>
                     </div>
@@ -629,7 +666,8 @@
                         <div class="box-body border-radius-none">
                           <h4 class="gg-inner-title">Distribuição percentual da participação das espécies no complexo
                             de <b>percevejos</b>.</h4>
-                          <canvas id="canvas-generator-graph-pizza-percevejos" width="800" height="450"></canvas>
+                          <!-- <canvas id="canvas-generator-graph-pizza-percevejos" width="800" height="450"></canvas> -->
+                          <div id="canvas-generator-graph-pizza-percevejos" style="min-width: 310px; max-width: 800px; max-height: 650px;"></div>
                         </div>
                       </div>
                     </div>
@@ -955,7 +993,7 @@
     </footer>
   </div>
   <!-- ./wrapper -->
-  <script>
+	<script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js')
         .then(function () {
