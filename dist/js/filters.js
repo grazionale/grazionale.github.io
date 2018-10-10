@@ -30,7 +30,12 @@ function filterByAno(ano, dados) {
     });
 
     if (cont == 0) {
-        alert("Safra não encontrada no ano selecionado");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Safra não encontrada no ano selecionado'
+        });
+        //alert("Safra não encontrada no ano selecionado");
         return [{}];
     }
     //console.log(new_data);
@@ -58,7 +63,12 @@ function filterByNorte(dados) {
     });
 
     if (i == 0) {
-        alert("Região norte não encontrada");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Região norte não encontrada'
+        });
+        //alert("Região norte não encontrada");
         return [{}];
     }
 
@@ -85,7 +95,12 @@ function filterByNoroeste(dados) {
     });
 
     if (i == 0) {
-        alert("Região noroeste não encontrada");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Região noroeste não encontrada'
+        });
+        //alert("Região noroeste não encontrada");
         return [{}];
     }
 
@@ -112,7 +127,12 @@ function filterBySul(dados) {
     });
 
     if (i == 0) {
-        alert("Região sul não encontrada");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Região sul não encontrada'
+        });
+        //alert("Região sul não encontrada");
         return [{}];
     }
 
@@ -139,7 +159,12 @@ function filterBySudoeste(dados) {
     });
 
     if (i == 0) {
-        alert("Região sudoeste não encontrada");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Região sudoeste não encontrada'
+        });
+        //alert("Região sudoeste não encontrada");
         return [{}];
     }
 
@@ -166,7 +191,12 @@ function filterByOeste(dados) {
     });
 
     if (i == 0) {
-        alert("Região oeste não encontrada");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Região oeste não encontrada'
+        });
+        //alert("Região oeste não encontrada");
         return [{}];
     }
 
@@ -204,7 +234,12 @@ function filterByRegion(norte_bool, noroeste_bool, sul_bool, sudoeste_bool, oest
     regioes = cleanObject(regioes); //Elimina arrays vazios dentro do array principal
     //console.log(regioes);
     if(regioes == ""){
-        alert("Não foram encontras análises nas regiões selecionadas");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Não foram encontras análises nas regiões selecionadas'
+        });
+       // alert("Não foram encontras análises nas regiões selecionadas");
     }
     return regioes;
 
@@ -230,7 +265,12 @@ function filterByCounty(name_county, dados) {
     });
 
     if (i == 0) {
-        alert("O município " + name_county + " não foi encontrada");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: "O município " + name_county + " não foi encontrada"
+        });
+        //alert("O município " + name_county + " não foi encontrada");
         return [{}];
     }
 
@@ -258,7 +298,12 @@ function filterByProducer(name_producer, dados) {
     });
 
     if (i == 0) {
-        alert("Dados do produtor " + name_producer + " não foram encontrados");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Dados do produtor ' + name_producer + ' não foram encontrados'
+        });
+        //alert("Dados do produtor " + name_producer + " não foram encontrados");
         return [{}];
     }
 
@@ -289,7 +334,12 @@ function filterByTechnical(name_technical, dados) {
     });
 
     if (i == 0) {
-        alert("Dados do técnico " + name_technical + " não foram encontrados");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Dados do técnico ' + name_technical + ' não foram encontrados'
+        });
+        //alert("Dados do técnico " + name_technical + " não foram encontrados");
         return [{}];
     }
 
@@ -317,7 +367,12 @@ function filterByUr(name_ur, dados) {
     });
 
     if (i == 0) {
-        alert("Dados da U.R. " + name_ur + " não foram encontrados");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Dados da U.R. ' + name_ur + ' não foram encontrados'
+        });
+        //alert("Dados da U.R. " + name_ur + " não foram encontrados");
         return [{}];
     }
 
@@ -345,7 +400,12 @@ function filterByCultivar(cultivar_ur, dados) {
     });
 
     if (i == 0) {
-        alert("Dados com Cultivar " + cultivar_ur + " não foram encontrados");
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Dados com Cultivar ' + cultivar_ur + ' não foram encontrados'
+        });
+        //alert("Dados com Cultivar " + cultivar_ur + " não foram encontrados");
         return [{}];
     }
 
@@ -374,7 +434,12 @@ function filterByRust(rest_bool, dados) {
         });
 
         if (i == 0) {
-            alert("Dados de plantações resistêntes a ferrugem não foram encontrados");
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Dados de plantações resistêntes a ferrugem não foram encontrados'
+            });
+            //alert("Dados de plantações resistêntes a ferrugem não foram encontrados");
             return [{}];
         }
     } else {
@@ -386,7 +451,12 @@ function filterByRust(rest_bool, dados) {
         });
 
         if (i == 0) {
-            alert("Dados de plantações não resistêntes a ferrugem não foram encontrados");
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Dados de plantações não resistêntes a ferrugem não foram encontrados'
+            });
+            //alert("Dados de plantações não resistêntes a ferrugem não foram encontrados");
             return [{}];
         }
     }
@@ -416,7 +486,12 @@ function filterByBt(bt_bool, dados) {
         });
 
         if (i == 0) {
-            alert("Dados de plantações com soja bt não foram encontrados");
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Dados de plantações com soja bt não foram encontrados'
+            });
+            //alert("Dados de plantações com soja bt não foram encontrados");
             return [{}];
         }
     } else {
@@ -428,7 +503,12 @@ function filterByBt(bt_bool, dados) {
         });
 
         if (i == 0) {
-            alert("Dados de plantações com soja não bt não foram encontrados");
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Dados de plantações com soja não bt não foram encontrados'
+            });
+            //alert("Dados de plantações com soja não bt não foram encontrados");
             return [{}];
         }
     }

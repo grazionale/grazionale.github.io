@@ -26,4 +26,24 @@
 
 .gg-inner-title{
     margin-bottom: 30px;
+    clear: both;
+}
+
+@media(max-width: 720px){
+    .col-lg-12{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .col-lg-6{
+        padding: 5px;
+        padding-left: 5px;
+    }
+}
+
+.swal2-popup .swal2-content{
+    font-size: 2.125em !important;
+}
+.swal2-popup .swal2-styled.swal2-confirm{
+    font-size: 1.7625em !important;
 }
