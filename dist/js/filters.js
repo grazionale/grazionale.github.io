@@ -317,7 +317,7 @@ function filterByTechnical(name_technical, dados) {
     } else {
         data = dados;
     }
-
+    
     //console.log(data);
 
     var i = 0;

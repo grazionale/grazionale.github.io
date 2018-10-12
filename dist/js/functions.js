@@ -482,3 +482,33 @@ function generateDataForGraphBarPercevejos(dados) {
     return objeto;
 
 }
+
+function limpar(){
+    $('#ano-da-safra').val("2017/2018").trigger("change", "Todos");
+
+    // $('#regiao-todas-safra').prop('checked', true);
+    // $('#regiao-norte-safra').prop('checked', true);
+    // $('#regiao-noroeste-safra').prop('checked', true);
+    // $('#regiao-sul-safra').prop('checked', true);
+    // $('#regiao-sudoeste-safra').prop('checked', true);
+    // $('#regiao-oeste-safra').prop('checked', true);
+    $("#regio-filtro").val("Todas").trigger("change", "Todas");
+    $('#municiopio-regiao').val("Todos").trigger("change", "Todos");
+    $('#produtor-safra').val("").trigger("change", "Todos");
+
+    $('#tecnico-safra').val("Todos").trigger("change", "Todos");
+
+    $('#cultivar-safra').val("Todos").trigger("change", "Todos");
+    $('#tipo-soja').val("Todos").trigger("change", "Todos");
+    $('#ferrugem-soja').val("Todos").trigger("change", "Todos");
+
+    // $('#municiopio-regiao').val('Todos');
+    // $('#produtor-safra').val('');
+    $('#data-inicial-amostra').val('');
+    $('#data-final-amostra').val('');
+    // $('#tecnico-safra').val('Todos');
+    $('#id-ur').val('');
+    // $('#cultivar-safra').val('Todos');
+    // $('#tipo-soja').val('Todos');
+    // $('#ferrugem-soja').val('Todos');
+}

@@ -508,7 +508,7 @@ function HCgerarCanvasGraficoPizzaLagartas(dados){
 
     var porcentagem_total = porcentagem_anticarsia + porcentagem_chrysodeixis + porcentagem_spodoptera + porcentagem_heliothinae;
 
-    Highcharts.chart('canvas-generator-graph-pizza', {
+    var graph_pizza_lagartas = Highcharts.chart('canvas-generator-graph-pizza', {
         chart: {
             type: 'pie'
         },
@@ -661,20 +661,42 @@ function HCgerarCanvasGraficoPizzaPercevejos(dados){
 //Retorna dados filtrados a partir do filtro (front-end) que o usuário escolher.
 function filtrar(){
     var ano_safra = $("#ano-da-safra").val();
+    var selectedValues = $('#regio-filtro').val();
+    norte = 0; noroeste = 0; sul = 0; sudoeste = 0; oeste = 0;
+    $.each(selectedValues, function(valores, selecionado){
+        if(selecionado === "Norte"){
+            norte = 1;
+        } else if (selecionado === "Noroeste"){
+            noroeste = 1;
+        } else if (selecionado === "Sul"){
+            sul = 1;
+        } else if (selecionado === "Sudoeste"){
+            sudoeste = 1;
+        } else if (selecionado === "Oeste"){
+            oeste = 1;
+        } else if (selecionado === "Todas"){
+            norte = 1;
+            noroeste = 1;
+            sul = 1;
+            sudoeste = 1;
+            oeste = 1;  
+        }
+    });
 
-    if($('#regiao-norte-safra').is(':checked')){ var norte = 1;} else{ var norte = 0;}
-    if($('#regiao-noroeste-safra').is(':checked')){ var noroeste = 1;} else{ var noroeste = 0;}
-    if($('#regiao-sul-safra').is(':checked')){ var sul = 1;} else{ var sul = 0;}
-    if($('#regiao-sudoeste-safra').is(':checked')){ var sudoeste = 1;} else{ var sudoeste = 0;}
-    if($('#regiao-oeste-safra').is(':checked')){ var oeste = 1;} else{ var oeste = 0;}
+    // if($('#regiao-norte-safra').is(':checked')){ var norte = 1;} else{ var norte = 0;}
+    // if($('#regiao-noroeste-safra').is(':checked')){ var noroeste = 1;} else{ var noroeste = 0;}
+    // if($('#regiao-sul-safra').is(':checked')){ var sul = 1;} else{ var sul = 0;}
+    // if($('#regiao-sudoeste-safra').is(':checked')){ var sudoeste = 1;} else{ var sudoeste = 0;}
+    // if($('#regiao-oeste-safra').is(':checked')){ var oeste = 1;} else{ var oeste = 0;}
+
 
     var municio = $("#municiopio-regiao").val();
     var produtor = $("#produtor-safra").val();
     var tecnico = $("#tecnico-safra").val();
     var id_ur = $("#id-ur").val();
     var cultivar = $("#cultivar-safra").val();
-    var ferrugem = $("input[name=ferrugem]:checked").val();
-    var tipo_soja = $("input[name=tipo-soja]:checked").val();
+    var ferrugem = $("#ferrugem-soja").val();
+    var tipo_soja = $("#tipo-soja").val();
     var data_inicial = $("#data-inicial-amostra").val();
     var data_final = $("#data-final-amostra").val();
 
@@ -717,20 +739,20 @@ function filtrar(){
         dados = filterByCultivar(cultivar,dados);
     }
 
-    if(ferrugem == "ferrugem-sim"){
+    if(ferrugem == "sim"){
         //console.log("Filtrou por cultivos com ferrugem");
         dados = filterByRust(1,dados);
-    } else if (ferrugem == "ferrugem-nao") {
+    } else if (ferrugem == "nao") {
         //console.log("Filtrou por cultivos sem ferrugem");
         dados = filterByRust(0,dados);
     } else {
         //console.log("Filtrou por cultivos com ferrugem e sem ferrugem");
     }
 
-    if(tipo_soja == "tipo-soja-sim"){
+    if(tipo_soja == "sim"){
         //console.log("Filtrou por cultivos com soja Bt");
         dados = filterByBt(1,dados);
-    } else if (tipo_soja == "tipo-soja-nao") {
+    } else if (tipo_soja == "nao") {
         //console.log("Filtrou por cultivos sem soja Bt");
         dados = filterByBt(0,dados);
     } else {
@@ -778,3 +800,6 @@ function filtrar(){
     HCgerarCanvasGraficoPizzaLagartas(dados);
     HCgerarCanvasGraficoPizzaPercevejos(dados);
 }
+
+
+
