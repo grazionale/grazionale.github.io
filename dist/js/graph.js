@@ -725,7 +725,7 @@ function filtrar(){
         dados = filterByTechnical(tecnico,dados);
     }
 
-    if(id_ur == ""){
+    if(id_ur == "Todos"){
         //console.log("Filtrou por todos as UR's");
     } else {
         //console.log("Filtrou pela UR com o ID " + id_ur);
