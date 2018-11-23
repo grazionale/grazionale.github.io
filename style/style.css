@@ -56,9 +56,6 @@
     clear: both;
 }
 
-.data-amostra{
-    text-align: center;
-}
 @media(max-width: 1199px){
     .filter-col-2{
         padding-left: 0 !important;
