@@ -711,7 +711,7 @@ function filtrar(){
         dados = filterByCounty(municio,dados);
     }
 
-    if(produtor == ""){
+    if(produtor == "Todos"){
         //console.log("Filtrou por todos os produtores");
     } else {
         //console.log("Filtrou pelo produtor " + produtor);
