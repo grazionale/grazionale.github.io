@@ -6,6 +6,8 @@ self.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         '/index.html',
+		'/mip.html',
+		'/autor.html',
         '/manifest.js',
         '/style/bootstrap/dist/css/bootstrap.min.css',
         '/style/font-awesome/css/font-awesome.min.css',

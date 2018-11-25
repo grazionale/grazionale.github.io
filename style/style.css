@@ -93,3 +93,24 @@
     line-height: 23px !important;
 }
 
+
+.img-projeto-graos{
+	width: 100%;
+	margin-top: 30px;
+}
+
+
+.img-projeto-graos img{
+	width: 100%;
+	max-width: 800px;
+}
+
+.texto-autor{
+	text-align: center;
+	padding-top: 15px;
+}
+
+.big-icon-grz{
+	font-size: 30px;
+	color: #292929;
+}
