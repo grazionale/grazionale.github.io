@@ -21,7 +21,7 @@ function generateDataFase(fase, dados) {
             data_inicial = new Date(aux_data[1] + "-" + aux_data[0] + "-" + aux_data[2]);
             if(isNaN(data_inicial.getDay())){
                 data_inicial = new Date(aux_data[2] + "/" + aux_data[1] + "/" + aux_data[0]);
-                console.log(data_inicial);
+                //console.log(data_inicial);
             }
         } 
         data_final_primeira_fase = addDays(data_inicial, 30);
