@@ -19,7 +19,10 @@ function generateDataFase(fase, dados) {
         var data_inicial = new Date(aux_data[1] + "," + aux_data[0] + "," + aux_data[2]);
         if(isNaN(data_inicial.getDay())){
             data_inicial = new Date(aux_data[1] + "-" + aux_data[0] + "-" + aux_data[2]);
-        }
+            if(isNaN(data_inicial.getDay())){
+                data_inicial = new Date(aux_data[1] + "/" + aux_data[0] + "/" + aux_data[2]);
+            }
+        } 
         data_final_primeira_fase = addDays(data_inicial, 30);
         data_final_segunda_fase = addDays(data_final_primeira_fase, 30);
 
@@ -30,6 +33,9 @@ function generateDataFase(fase, dados) {
             var data = new Date(aux[1] + "," + aux[0] + "," + aux[2]);
             if(isNaN(data.getDay())){
                 data = new Date(aux[1] + "-" + aux[0] + "-" + aux[2]);
+                if(isNaN(data.getDay())){
+                    data = new Date(aux_data[1] + "/" + aux_data[0] + "/" + aux_data[2]);
+                }
             }
             if (data < data_final_primeira_fase) {
                 //console.log(data + " - 1 Fase");
