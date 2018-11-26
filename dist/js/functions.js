@@ -14,8 +14,12 @@ function generateDataFase(fase, dados) {
     $.each(data, function (analises, analise) {
         //console.log(analise);
         var aux_data = analise.samplePestSet[0].sampleDate;
+		//console.log(aux_data);
         aux_data = aux_data.split("/");
         var data_inicial = new Date(aux_data[1] + "," + aux_data[0] + "," + aux_data[2]);
+        if(isNaN(data_inicial.getDay())){
+            data_inicial = new Date(aux_data[1] + "-" + aux_data[0] + "-" + aux_data[2]);
+        }
         data_final_primeira_fase = addDays(data_inicial, 30);
         data_final_segunda_fase = addDays(data_final_primeira_fase, 30);
 
@@ -24,7 +28,9 @@ function generateDataFase(fase, dados) {
             var aux = samplePest.sampleDate;
             aux = aux.split("/");
             var data = new Date(aux[1] + "," + aux[0] + "," + aux[2]);
-
+            if(isNaN(data.getDay())){
+                data = new Date(aux[1] + "," + aux[0] + "," + aux[2]);
+            }
             if (data < data_final_primeira_fase) {
                 //console.log(data + " - 1 Fase");
                 dados_primeira_fase[d1] = samplePest;
