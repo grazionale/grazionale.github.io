@@ -29,7 +29,7 @@ function generateDataFase(fase, dados) {
             aux = aux.split("/");
             var data = new Date(aux[1] + "," + aux[0] + "," + aux[2]);
             if(isNaN(data.getDay())){
-                data = new Date(aux[1] + "," + aux[0] + "," + aux[2]);
+                data = new Date(aux[1] + "-" + aux[0] + "-" + aux[2]);
             }
             if (data < data_final_primeira_fase) {
                 //console.log(data + " - 1 Fase");
