@@ -20,7 +20,7 @@ function generateDataFase(fase, dados) {
         if(isNaN(data_inicial.getDay())){
             data_inicial = new Date(aux_data[1] + "-" + aux_data[0] + "-" + aux_data[2]);
             if(isNaN(data_inicial.getDay())){
-                data_inicial = new Date(aux_data[1] + "/" + aux_data[0] + "/" + aux_data[2]);
+                data_inicial = new Date(aux_data[2] + "/" + aux_data[1] + "/" + aux_data[0]);
                 console.log(data_inicial);
             }
         } 
