@@ -964,9 +964,14 @@ footer {
     }
 
     .project-image {
-        display: none;
+        // display: none;
+        width: 100%;
+        padding: 20px;
     }
 
+    .project-image img{
+        margin: 0 auto;
+    }
     .project-info {
         position: relative;
         margin: 0;
