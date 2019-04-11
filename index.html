@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gabriel Grazionale</title>
+    <link rel="shortcut icon" href="dist_portifolio/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="dist_portifolio/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dist_portifolio/libs/font-awesome/css/font-awesome.min.css">
+    <link href="dist_portifolio/css/bootstrap.min.css" rel="stylesheet">
+    <link id="theme" href="dist_portifolio/css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large" onclick="open_menu()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close" onclick="close_menu()">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">Sobre</a>
+            </li>
+            <li>
+                <a href="#experience">Experiência</a>
+            </li>
+            <li>
+                <a href="#education">Educação</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contato</a>
+            </li>
+            <li class="alterar-cor-btn">
+                <a id="back-btn-cor" href="#" onclick="changeColorTheme()">Alterar Cor</a>
+            </li>
+            <li class="alterar-cor-btn">
+                <a id="back-btn-cor-plus" href="#" onclick="resizeText(1)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+            </li>
+            <li class="alterar-cor-btn">
+                <a id="back-btn-cor-mine" href="#" onclick="resizeText(-1)"><i class="fa fa-minus" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Gabriel Grazionale</h1>
+            <h2>Engenheiro de Software</h2>
+            <a href="#about" class="btn-rounded-black">Vamos se conhecer?</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">Deixa eu lhe contar um pouquinho sobre mim!</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Formado em Engenharia de Software pela UTFPR, sou um profissional proativo, com espírito de
+                        liderança, humilde, autodidata e pronto para encarar qualquer problema ou desafio. Durante a
+                        faculdade aprendi muito sobre gestão de projetos, metodologias ágeis, Linguagem de Modelagem
+                        Unificada (UML), sistemas operacionais, redes e muito mais! Enquanto profissional, tive o prazer
+                        de trabalhar com desenvolvimento web. Durante um ano fui responsável pelo desenvolvimento de
+                        aproximadamente 15 projetos dentre os quais envolvem lojas virtuais, catálogos online, websites
+                        institucionais e empresariais. Todos estes projetos foram desenvolvidos utilizando gerenciadores
+                        de conteúdo (CMS's) Wordpress e Magento que por sua vez utilizam como base HTML, CSS,
+                        Javascript, PHP e frameworks diversos. Atualmente, sou analista de sistemas na empresa Pado S.A,
+                        onde sou responsável pelo levantamento de requisitos com os setores envolvidos; elaboração do
+                        projeto; desenvolvimento de novos sistemas; manutenção e criação de novas funcionalidades nos
+                        sistemas existentes. Aqui na Pado temos nosso próprio datacenter, então, cuidamos da nossa
+                        própria infraestrutura. Servidores em Linux e Windows Server. Os sistemas existentes e novos
+                        foram ou serão desenvolvidos em HTML, CSS, Javascript, PHP, C#, ASP.NET, banco de dados Oracle e
+                        MySql. Considero meu inglês em um nível intermediário. Isso foi só um pouquinho do que aprendi
+                        nos últimos anos com minha vida educacional e
+                        profissional, já os meus hobbies envolvem outras tecnologias que estudo como Angular e Spring
+                        Boot.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experiência Profissional</h2>
+        <div class="container">
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Educação</h2>
+        <div class="education-block">
+            <h3>Universidade Tecnológica Federal</h3>
+            <span class="education-date">Janeiro 2015 - Dezembro 2018</span>
+            <h4>Bacharelado em Engenharia de Software</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat
+                laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur
+                libero. Morbi dapibus porta quam laoreet placerat.
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Águia Master - Ensino Médio</h3>
+            <span class="education-date">Janeiro 2012 - Dezembro 2014</span>
+            <h4>Bachelor of Science in Computer Science</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat
+                laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur
+                libero. Morbi dapibus porta quam laoreet placerat.
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="skills" class="background-alt">
+        <h2 class="heading">Skills</h2>
+        <ul id='list-skills'>
+
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2 class="heading">Então, vamos conversar?</h2>
+        <!-- <div id="contact-form">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div> -->
+        <!-- End #contact-form -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a href="mailto:gabrielgrazionale@hotmail.com?Subject=Vamos%20conversar" target="_blank">
+                        <div class="boxes-contacts">
+                            <span class="icons-contacts"><i class="fa fa-mail-forward" aria-hidden="true"></i></span>
+                            <h5>E-mail</h5>
+                            <span>gabrielgrazionale@hotmail.com</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://wa.me/55043996623080" target="_blank">
+                        <div class="boxes-contacts">
+                            <span class="icons-contacts"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+                            <h5>Whatsapp</h5>
+                            <span>(043) 9 9662-3080</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://www.linkedin.com/in/gabriel-grazionale-gomes-fernandes-08b331144/" target="_blank">
+                        <div class="boxes-contacts">
+                            <span class="icons-contacts"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                            <h5>Linkedin</h5>
+                            <span>Gabriel Grazionale</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://goo.gl/maps/VCJBGzSiBD62" target="_blank">
+                        <div class="boxes-contacts">
+                            <span class="icons-contacts"><i class="fa fa-map" aria-hidden="true"></i></span>
+                            <h5>Endereço</h5>
+                            <span>Rua Paranaguá, 552-Londrina</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2019 Gabriel Grazionale
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top" onclick="scrollToTop(100)">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/grazionale" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/gabriel-grazionale-gomes-fernandes-08b331144/"
+                                target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/gabrielgrazionale" target="_blank"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/55043996623080" target="_blank"><i class="fa fa-whatsapp"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="dist_portifolio/js/scripts.js"></script>
+</body>
+
+</html>
