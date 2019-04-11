@@ -22,7 +22,7 @@ function close_menu(){
 }
 
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://grazionale.io/dist_portifolio/json/empresas.json');
+xhr.open('GET', 'https://grazionale.github.io/dist_portifolio/json/empresas.json');
 xhr.onload = function() {
     if (xhr.status === 200) {
         data = JSON.parse(xhr.response);
@@ -72,7 +72,7 @@ function changeColorTheme(){
 }
 
 var skills = new XMLHttpRequest();
-skills.open('GET', 'https://grazionale.io/dist_portifolio/json/skills.json');
+skills.open('GET', 'https://grazionale.github.io/dist_portifolio/json/skills.json');
 skills.onload = function() {
     if (skills.status === 200) {
         data = JSON.parse(skills.response);
