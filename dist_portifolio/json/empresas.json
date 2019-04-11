@@ -1,0 +1,13 @@
+[
+    {
+     "empresa": "Pado S.A.",
+     "cargo": "Analista de Sistemas",
+     "atividades": "Principais atividades:<br>- Levantamento de requisitos com os setores envolvidos;<br>- Elaboração e documentação de projetos<br>- Manutenção e melhoria nos sistemas existentes da área administrativa e da fábrica(Intranet,BI,Sistema de Gestão, Sistema de Expedição utilizado pela fábrica, Sistema de Demandasutilizado pela Fábrica)<br> - Elaboração de consultas complexas utilizando SQL + PL/SQL (Oracle) para a criação de views utilizadas pelo BI<br> - Criação de integrações entre ERP Focco e CRM Sales Force<br> - Participação na manutenção dos servidores do datacenter da empresa<br> - Constante contato com os colaboradores da empresa<br><br><br> Principais Projetos<br> - Criação do website da Pago 2019 com integração ao activity directory (AD)<br> - Criação da integração entre ERP Focco com o CRM Sales Force (Integração feita em python, consumindo a API da Sales Force e o banco utilizando SOQL)<br>"
+    },
+    {
+     "empresa": "Buzz Tecnologia e Design",
+     "cargo": "Desenvolvedor Full Stack",
+     "atividades": " Principais atividades:<br> - Levantamento de requisitos com os clientes envolvidos;<br> - Manutenção e melhoria nos websites e lojas virtuais dos clientes existentes;<br> - Criação de novos websites e lojas virtuais<br> - Integrações com métodos de pagamento<br> - Deploy de aplicações em servidores compartilhados e dedicados<br> - Entrega e apresentação dos projetos<br> <br><br> Principais Projetos<br> - Durante um ano que trabalhei na Buzz, fui responsável por aproximadamente<br>"
+    }
+    
+]
