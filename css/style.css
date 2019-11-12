@@ -626,6 +626,9 @@ header {
         text-align: center;
         margin-top: 2rem;
     }
+    .principal-image{
+        width: 100%;
+    }
 }
 
 /* Mostre o talento do seu craque */
