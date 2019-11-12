@@ -627,7 +627,7 @@ header {
         margin-top: 2rem;
     }
     .principal-image img{
-        width: 100%;
+        width: 100% !important;
     }
 }
 
